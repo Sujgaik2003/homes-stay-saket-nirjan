@@ -1794,9 +1794,26 @@ h6 {
         margin-top: var(--space-xl);
     }
 
+    .room-showcase {
+        grid-template-columns: 1fr;
+        gap: var(--space-xl);
+    }
+
     .room-gallery {
         position: static;
-        margin-bottom: var(--space-xl);
+        margin-bottom: var(--space-lg);
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .gallery-main {
+        width: 100%;
+    }
+
+    .gallery-thumbs {
+        width: 100%;
     }
 
     .amenities-grid {
@@ -1996,8 +2013,28 @@ h6 {
     }
 
     /* Room Gallery */
+    .room-gallery {
+        margin-bottom: var(--space-md);
+    }
+
     .gallery-main img {
-        height: 350px;
+        height: 280px;
+        /* Shorter image for small phones to show text sooner */
+    }
+
+    .room-details {
+        text-align: center;
+        padding: 0 var(--space-xs);
+    }
+
+    .room-specs {
+        justify-content: center;
+    }
+
+    .amenities-list,
+    .bathroom-list {
+        display: inline-block;
+        text-align: left;
     }
 
     .gallery-thumbs {
@@ -2012,6 +2049,26 @@ h6 {
 
     .footer-brand {
         margin-bottom: var(--space-lg);
+    }
+
+    /* Contact Section Centering */
+    .contact-info {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-details {
+        align-items: center;
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    .contact-item {
+        text-align: left;
+        width: 100%;
     }
 }
 
