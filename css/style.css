@@ -112,6 +112,17 @@ html {
     font-size: 16px;
 }
 
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    position: relative;
+    -webkit-text-size-adjust: 100%;
+}
+
 body {
     font-family: var(--font-body);
     font-size: var(--text-base);
@@ -120,7 +131,6 @@ body {
     background-color: var(--color-bg-cream);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    overflow-x: hidden;
 }
 
 img {
@@ -490,6 +500,7 @@ h6 {
     z-index: 2;
     text-align: center;
     max-width: 900px;
+    width: 100%;
     padding: 0 var(--space-xl);
 }
 
@@ -1800,6 +1811,11 @@ h6 {
         grid-template-columns: repeat(2, 1fr);
         gap: var(--space-xl);
     }
+
+    .booking-container {
+        padding: var(--space-xl);
+        border-radius: var(--radius-xl);
+    }
 }
 
 /* Tablet Portrait & Mobile */
@@ -1890,6 +1906,14 @@ h6 {
     }
 
     /* Hero Mobile */
+    .hero {
+        min-height: auto;
+        height: auto;
+        padding-top: calc(var(--nav-height) + var(--space-2xl));
+        padding-bottom: var(--space-3xl);
+        align-items: flex-start;
+    }
+
     .hero-title {
         font-size: var(--text-3xl);
     }
@@ -1901,6 +1925,11 @@ h6 {
     .hero-buttons {
         flex-direction: column;
         align-items: stretch;
+        margin-bottom: var(--space-xl);
+    }
+
+    .hero-scroll {
+        display: none;
     }
 
     /* Forms Mobile */
@@ -1988,52 +2017,47 @@ h6 {
 
 @media (max-width: 480px) {
     :root {
-        --text-5xl: 2rem;
-        --nav-height: 70px;
+        --text-5xl: 1.75rem;
+        --text-4xl: 1.5rem;
+        --nav-height: 60px;
     }
 
-    .logo-text {
-        font-size: var(--text-lg);
+    .container {
+        padding: 0 var(--space-md);
+    }
+
+    .nav-logo .logo-text {
+        font-size: 1.2rem;
     }
 
     .hero-title {
-        font-size: 2.2rem;
+        font-size: 1.8rem;
+        line-height: 1.3;
     }
 
-    .nav-menu {
-        padding-top: var(--space-5xl);
+    .hero-label {
+        font-size: 0.8rem;
+        padding: var(--space-xs) var(--space-md);
+        margin-bottom: var(--space-md);
     }
 
-    /* Gallery to Single Column */
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .booking-container {
+        padding: var(--space-md);
+    }
+
     .gallery-grid {
         grid-template-columns: 1fr;
     }
 
-    .gallery-thumbs {
-        grid-template-columns: repeat(4, 1fr);
-        /* Keep nicely usable */
-    }
-
-    /* Adjust buttons */
-    .hero-buttons {
-        flex-direction: column;
-        width: 100%;
-    }
-
-    .btn {
-        width: 100%;
-    }
-
     .whatsapp-float {
-        bottom: 20px;
-        right: 20px;
+        bottom: 15px;
+        right: 15px;
         width: 50px;
         height: 50px;
-    }
-
-    .whatsapp-float svg {
-        width: 26px;
-        height: 26px;
     }
 }
 
