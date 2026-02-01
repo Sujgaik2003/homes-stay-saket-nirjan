@@ -1,0 +1,521 @@
+/* ========================================
+   Saket Nikunj HomeStay - Animations
+   Premium Micro-interactions & Transitions
+   ======================================== */
+
+/* ========================================
+   FADE-UP ANIMATION (Scroll Reveal)
+   ======================================== */
+.fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition:
+        opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+        transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Staggered Animations */
+.fade-up:nth-child(2) {
+    transition-delay: 0.1s;
+}
+
+.fade-up:nth-child(3) {
+    transition-delay: 0.2s;
+}
+
+.fade-up:nth-child(4) {
+    transition-delay: 0.3s;
+}
+
+.fade-up:nth-child(5) {
+    transition-delay: 0.4s;
+}
+
+.fade-up:nth-child(6) {
+    transition-delay: 0.5s;
+}
+
+/* ========================================
+   HERO ANIMATIONS
+   ======================================== */
+.hero-content .fade-up {
+    opacity: 0;
+    transform: translateY(40px);
+}
+
+.hero-content .fade-up:nth-child(1) {
+    transition-delay: 0.2s;
+}
+
+.hero-content .fade-up:nth-child(2) {
+    transition-delay: 0.4s;
+}
+
+.hero-content .fade-up:nth-child(3) {
+    transition-delay: 0.6s;
+}
+
+.hero-content .fade-up:nth-child(4) {
+    transition-delay: 0.8s;
+}
+
+.hero-loaded .hero-content .fade-up {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Hero Slide Ken Burns Effect */
+.hero-slide.active {
+    animation: kenburns 20s ease infinite;
+}
+
+@keyframes kenburns {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* ========================================
+   IMAGE HOVER EFFECTS
+   ======================================== */
+.image-wrapper {
+    overflow: hidden;
+}
+
+.image-wrapper::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg,
+            transparent 0%,
+            rgba(0, 0, 0, 0.1) 100%);
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.image-wrapper:hover::before {
+    opacity: 1;
+}
+
+.image-wrapper img {
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.image-wrapper:hover img {
+    transform: scale(1.05);
+}
+
+/* ========================================
+   BUTTON ANIMATIONS
+   ======================================== */
+.btn {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease, height 0.6s ease;
+}
+
+.btn:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.btn-primary:active {
+    transform: translateY(1px);
+}
+
+/* ========================================
+   CARD HOVER ANIMATIONS
+   ======================================== */
+.amenity-card,
+.rule-card,
+.dining-feature,
+.about-feature {
+    transition:
+        transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+        box-shadow 0.4s ease;
+}
+
+/* ========================================
+   ICON ANIMATIONS
+   ======================================== */
+.amenity-icon,
+.rule-icon,
+.contact-icon,
+.feature-icon {
+    transition:
+        transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
+        background 0.3s ease;
+}
+
+.amenity-card:hover .amenity-icon,
+.rule-card:hover .rule-icon {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.contact-item:hover .contact-icon {
+    transform: scale(1.1);
+}
+
+/* ========================================
+   LINK UNDERLINE ANIMATION
+   ======================================== */
+.footer-links a,
+.contact-content a {
+    position: relative;
+    display: inline-block;
+}
+
+.footer-links a::after,
+.contact-content a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: currentColor;
+    transition: width 0.3s ease;
+}
+
+.footer-links a:hover::after,
+.contact-content a:hover::after {
+    width: 100%;
+}
+
+/* ========================================
+   FORM INPUT ANIMATIONS
+   ======================================== */
+.form-group input,
+.form-group select,
+.form-group textarea {
+    transition:
+        border-color 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    box-shadow: 0 0 0 4px rgba(201, 169, 98, 0.15);
+}
+
+/* Label Float Animation */
+.form-group {
+    position: relative;
+}
+
+.form-group label {
+    transition:
+        transform 0.3s ease,
+        color 0.3s ease;
+}
+
+/* ========================================
+   GALLERY ANIMATIONS
+   ======================================== */
+.gallery-main img {
+    transition:
+        transform 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+        opacity 0.5s ease;
+}
+
+.gallery-thumb {
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        opacity 0.3s ease;
+}
+
+.gallery-thumb:hover {
+    transform: translateY(-3px);
+}
+
+.gallery-thumb img {
+    transition: transform 0.5s ease;
+}
+
+.gallery-thumb:hover img {
+    transform: scale(1.1);
+}
+
+/* Image Crossfade */
+#mainRoomImage {
+    transition: opacity 0.5s ease;
+}
+
+#mainRoomImage.changing {
+    opacity: 0.5;
+}
+
+/* ========================================
+   NAVBAR ANIMATIONS
+   ======================================== */
+.navbar {
+    transition:
+        background 0.4s ease,
+        padding 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+.nav-link {
+    transition: color 0.3s ease;
+}
+
+.nav-link::after {
+    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Hamburger Animation */
+.nav-toggle.active .hamburger {
+    background: transparent;
+}
+
+.nav-toggle.active .hamburger::before {
+    transform: rotate(45deg);
+    top: 0;
+}
+
+.nav-toggle.active .hamburger::after {
+    transform: rotate(-45deg);
+    top: 0;
+}
+
+/* ========================================
+   WHATSAPP BUTTON ANIMATION
+   ======================================== */
+.whatsapp-float {
+    animation: whatsapp-pulse 2s infinite;
+}
+
+@keyframes whatsapp-pulse {
+
+    0%,
+    100% {
+        box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+    }
+
+    50% {
+        box-shadow: 0 4px 30px rgba(37, 211, 102, 0.6),
+            0 0 0 10px rgba(37, 211, 102, 0.1);
+    }
+}
+
+.whatsapp-float:hover {
+    animation: none;
+}
+
+/* ========================================
+   PROGRESS STEP ANIMATIONS
+   ======================================== */
+.progress-step .step-number {
+    transition:
+        background 0.4s ease,
+        color 0.4s ease,
+        transform 0.3s ease;
+}
+
+.progress-step.active .step-number {
+    transform: scale(1.1);
+}
+
+.progress-step.completed .step-number::after {
+    content: '\2713';
+    position: absolute;
+}
+
+/* ========================================
+   CONFIRMATION ANIMATION
+   ======================================== */
+.booking-confirmation .confirmation-icon {
+    animation: success-appear 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes success-appear {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.booking-confirmation .confirmation-icon svg {
+    animation: checkmark 0.5s ease 0.3s forwards;
+    stroke-dasharray: 50;
+    stroke-dashoffset: 50;
+}
+
+@keyframes checkmark {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+/* ========================================
+   LOADING STATES
+   ======================================== */
+.btn.loading {
+    pointer-events: none;
+    opacity: 0.7;
+}
+
+.btn.loading::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 2px solid transparent;
+    border-top-color: currentColor;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ========================================
+   SCROLL INDICATOR ANIMATION
+   ======================================== */
+.scroll-indicator::after {
+    animation: scroll-bounce 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+/* ========================================
+   SUBTLE FLOAT ANIMATION
+   ======================================== */
+.about-badge {
+    animation: subtle-float 4s ease-in-out infinite;
+}
+
+@keyframes subtle-float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+/* ========================================
+   PAGE LOAD TRANSITIONS
+   ======================================== */
+body {
+    opacity: 0;
+    animation: page-load 0.6s ease forwards;
+}
+
+@keyframes page-load {
+    to {
+        opacity: 1;
+    }
+}
+
+/* ========================================
+   SMOOTH SECTION TRANSITIONS
+   ======================================== */
+.section {
+    transition: opacity 0.3s ease;
+}
+
+/* ========================================
+   REDUCED MOTION PREFERENCE
+   ======================================== */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .fade-up {
+        opacity: 1;
+        transform: none;
+    }
+
+    .hero-slide.active {
+        animation: none;
+    }
+
+    .whatsapp-float {
+        animation: none;
+    }
+
+    .about-badge {
+        animation: none;
+    }
+}
+
+/* ========================================
+   FOCUS STATES (Accessibility)
+   ======================================== */
+.btn:focus-visible,
+.nav-link:focus-visible,
+.gallery-thumb:focus-visible,
+.auth-tab:focus-visible {
+    outline: 2px solid var(--color-accent-gold);
+    outline-offset: 4px;
+}
+
+.form-group input:focus-visible,
+.form-group select:focus-visible,
+.form-group textarea:focus-visible {
+    outline: none;
+}
+
+/* ========================================
+   INTERACTIVE STATES
+   ======================================== */
+/* Touch Device Optimizations */
+@media (hover: none) {
+    .btn:hover::before {
+        display: none;
+    }
+
+    .image-wrapper:hover img {
+        transform: none;
+    }
+
+    .amenity-card:hover,
+    .rule-card:hover {
+        transform: none;
+    }
+}
