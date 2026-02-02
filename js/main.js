@@ -300,7 +300,7 @@ ${formData.message}
 ---
 Sent from Website Contact Form`;
 
-        const whatsappUrl = `https://wa.me/919359416735?text=${encodeURIComponent(message)}`;
+        const whatsappUrl = `https://wa.me/919927949222?text=${encodeURIComponent(message)}`;
         window.open(whatsappUrl, '_blank');
 
         // Show success message
