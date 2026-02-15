@@ -5,7 +5,7 @@
    ======================================== */
 
 // Email where all booking details will be sent
-const BOOKING_EMAIL = 'sujeetsg1372@gmail.com';
+const BOOKING_EMAIL = 'saket.braj@gmail.com';
 
 /* ========================================
    MODAL OPEN / CLOSE
